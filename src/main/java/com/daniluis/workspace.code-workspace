@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "supercalculadora",
+			"path": "..\\..\\..\\..\\.."
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive"
+	}
+}

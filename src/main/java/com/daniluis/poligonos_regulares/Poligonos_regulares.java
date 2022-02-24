@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poligonos_regulares;
+package com.daniluis.poligonos_regulares;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Luis
  */
-public class poligonos_regulares {
+public class Poligonos_regulares {
 
     public static double perimetroPoligono(int lados, double medir) {
         return (lados * medir);
@@ -48,7 +48,6 @@ public class poligonos_regulares {
     
     public static void menuPoligonos() {
         Scanner teclado = new Scanner(System.in);
-
         //declaracion de variables
         int poligono;
         double lado, base, radio, area, altura = 0, superficie;

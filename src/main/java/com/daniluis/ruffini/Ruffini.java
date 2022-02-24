@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ruffini;
+package com.daniluis.ruffini;
 
 import java.util.Scanner;
 
@@ -11,13 +11,13 @@ import java.util.Scanner;
  *
  * @author Luis
  */
-public class ruffini {
+public class Ruffini {
 
     private int x;
     private int n;
     private int xCuadrado;
 
-    public ruffini( int xCuadrado, int x, int n) {
+    public Ruffini( int xCuadrado, int x, int n) {
         
         this.xCuadrado = xCuadrado;
         this.x = x;
@@ -25,7 +25,7 @@ public class ruffini {
         
     }
 
-    public ruffini(int x, int n) {
+    public Ruffini(int x, int n) {
         this.x = x;
         this.n = n;
         this.xCuadrado = 0;
@@ -69,7 +69,7 @@ public class ruffini {
 
         valorTres = teclado.nextInt();
 
-        ruffini Ruffi = new ruffini(valorUno, valorDos, valorTres); // si da no a NaN el valor no es retornable
+        Ruffini Ruffi = new Ruffini(valorUno, valorDos, valorTres); // si da no a NaN el valor no es retornable
 
        
         

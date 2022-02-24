@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aritmetica_basica;
+package com.daniluis.aritmetica_basica;
 
 import java.util.Scanner;
 
@@ -13,19 +13,19 @@ import java.util.Scanner;
  *
  * @author Luis
  */
-public class aritmetica {
+public class Aritmetica {
 
     private double a;
     private double b;
     private double memoria;
 
-    public aritmetica(double a) {
+    public Aritmetica(double a) {
         this.a = a;
         this.b = memoria;
 
     }
 
-    public aritmetica(double a, double b) {
+    public Aritmetica(double a, double b) {
         this.a = a;
         this.b = b;
     }
@@ -134,7 +134,7 @@ public class aritmetica {
 
             opcion = teclado.nextInt();
 
-            aritmetica Objeto = new aritmetica(1, 1);
+            Aritmetica Objeto = new Aritmetica(1, 1);
 
             if (opcion < 5 && opcion > 0) {
 
@@ -144,7 +144,7 @@ public class aritmetica {
                 System.out.println("Introduce el segundo valor :");
                 valorDos = teclado.nextDouble();
 
-                Objeto = new aritmetica(valorUno, valorDos);
+                Objeto = new Aritmetica(valorUno, valorDos);
 
             }
 
@@ -229,7 +229,7 @@ public class aritmetica {
                     }
             }
 
-        } while (opcion != 5);
-
+        } while (opcion < 1);
+        teclado.close();
     }
 }

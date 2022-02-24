@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package supercalculadora;
+package com.daniluis;
 
 /**
  *
  * @author Luis
  */
 import java.util.Scanner;
-import poligonos_regulares.poligonos_regulares;
-import aritmetica_basica.aritmetica;
-import ruffini.ruffini;
+
+import com.daniluis.ruffini.Ruffini;
+import com.daniluis.aritmetica_basica.Aritmetica;
+import com.daniluis.poligonos_regulares.Poligonos_regulares;
 
 public class SuperCalculadora {
 
@@ -20,7 +21,7 @@ public class SuperCalculadora {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+     
 
         Scanner teclado = new Scanner(System.in);
 
@@ -43,19 +44,19 @@ public class SuperCalculadora {
 
                 case 1:
 
-                    aritmetica.menuAritmertica();
+                    Aritmetica.menuAritmertica();
 
                     break;
 
                 case 2:
 
-                    poligonos_regulares.menuPoligonos();
+                    Poligonos_regulares.menuPoligonos();
 
                     break;
 
                 case 3:
 
-                    ruffini.menu();
+                    Ruffini.menu();
 
                     break;
 
@@ -74,7 +75,7 @@ public class SuperCalculadora {
             }
 
         } while (opcion != 4);
-
+        teclado.close();
     }
 
 }
