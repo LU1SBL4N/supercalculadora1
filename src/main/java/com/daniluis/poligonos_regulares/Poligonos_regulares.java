@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.daniluis.poligonos_regulares;
 
 import java.util.Scanner;
@@ -13,22 +8,9 @@ import java.util.Scanner;
  */
 public class Poligonos_regulares {
 
-    public static double perimetroPoligono(int lados, double medir) {
-        return (lados * medir);
-    }
-
-    public static double perimetroCirculo(double r) {
-        final double PI = Math.PI;
-        return (PI * r * r);
-    }
-
     public static double areaCirculo(double r) {
         final double PI = Math.PI;
-        return (2 * PI * r);
-    }
-
-    public static double perimetroRectangulo(double x, double y) {
-        return ((x * 2) + (y * 2));
+        return (PI * r * r);
     }
 
     public static double areaRectangulo(double x, double y) {
@@ -50,28 +32,18 @@ public class Poligonos_regulares {
         Scanner teclado = new Scanner(System.in);
         //declaracion de variables
         int poligono;
-        double lado, base, radio, area, altura = 0, superficie;
-        String sol_area, sol_volumen;
-        
-        /*Principio de codificacion: DRB - 16/12/2021*/
-        sol_area = "El area es ";
-        /*Fin de codificacion: DRB - 16/12/2021*/
-        
-        sol_volumen = "Su volumen es ";
+        double lado, base, radio, area;
 
         //constantes            
         
-        final String CABECERA_MENU, OPCIONES, SALIR, PEDIR_LADO, PEDIR_BASE, PEDIR_RADIO, ERROR, ADIOS, PEDIR_ALTURA;
-        CABECERA_MENU = "Indique el polígono regular del cual desea calcular area y perímetro:";
+        final String CABECERA_MENU, OPCIONES, SALIR, PEDIR_LADO, PEDIR_BASE, PEDIR_RADIO, ERROR, ADIOS, SOL_AREA;
+        CABECERA_MENU = "Indique el polígono regular del cual desea calcular su area:";
         OPCIONES = "\n1. Círculo\n2. Rectángulo\n3. Triángulo \n5. Pentágono";
         SALIR = "\nO. pulse 0 para salir\n";
         PEDIR_RADIO = "Introduzca su radio:";
         PEDIR_BASE = "Introduzca la base";
         PEDIR_LADO = "¿Cuánto mide el lado?";
-
-        /*Principio de codificacion: LU1SBL4N - 13/12/2021*/
-        PEDIR_ALTURA = "¿Cuánto mide la altura?";
-        /*Fin de codificacion: LU1SBL4N - 13/12/2021*/
+        SOL_AREA = "El area es ";
         
         ERROR = "Error en la introducción";
         ADIOS = "¡Adios!";
@@ -81,22 +53,15 @@ public class Poligonos_regulares {
             System.out.println(CABECERA_MENU + OPCIONES + SALIR);
             poligono = teclado.nextInt();
 
-            /*Principio de codificacion: LU1SBL4N - 13/12/2021*/
-            do {
-
-                System.out.println(PEDIR_ALTURA);
-                altura = teclado.nextDouble();
-
-            } while (altura <= 0);
-
-            /*Fin de codificacion: LU1SBL4N - 13/12/2021*/
+           
             switch (poligono) {
                 case 1: //circulo
                     System.out.println(PEDIR_RADIO);
                     radio = teclado.nextDouble();
                     
-                    System.out.println(sol_area + (areaCirculo(radio)*2+perimetroCirculo(radio)*altura));
-                    System.out.println(sol_volumen + areaCirculo(radio) * altura + "\n");
+                    area=areaCirculo(radio);
+                    //necesario redondear para poder comparar resultado (test)
+                    System.out.println(SOL_AREA+""+Math.round(area));
 
                     break;
                 case 2: //rectangulo
@@ -106,12 +71,10 @@ public class Poligonos_regulares {
                     System.out.println(PEDIR_LADO);
                     lado = teclado.nextDouble();
                     
-                    /*Principio de codificacion: DRB - 16/12/2021*/
-                    area=areaRectangulo(base, lado)*2+perimetroRectangulo(base, lado)*altura;
-                    System.out.println(sol_area + area);
-                    /*Fin de codificacion: DRB - 16/12/2021*/
+                  
+                    area=areaRectangulo(base, lado);
+                    System.out.println(SOL_AREA+""+area);
                     
-                    System.out.println(sol_volumen + areaRectangulo(base, lado) * altura + "\n");
                     break;
 
                 case 3: //triangulo
@@ -119,13 +82,7 @@ public class Poligonos_regulares {
                     lado = teclado.nextDouble();
                     
                     area = areaTriangulo(lado);
-                    
-                    /*Principio de codificacion: DRB - 16/12/2021*/
-                    superficie=areaTriangulo(lado)*2+perimetroPoligono(poligono, lado)*altura;
-                    System.out.println(sol_area + superficie);
-                    /*Fin de codificacion: DRB - 16/12/2021*/
-                    
-                    System.out.println(sol_volumen + area *altura+ "\n");
+                    System.out.println(SOL_AREA+""+Math.round(area));
                     break;
 
                 case 5: //pentagono  
@@ -134,14 +91,7 @@ public class Poligonos_regulares {
                     lado = teclado.nextDouble();
                     
                     area = areaPentagono(lado);
-                    
-                    /*Principio de codificacion: DRB - 16/12/2021*/
-                    superficie=areaPentagono(lado)*2+perimetroPoligono(poligono, lado)*altura;   
-                    System.out.println(sol_area + superficie);
-                    /*Fin de codificacion: DRB - 16/12/2021*/
-                    
-                    System.out.println(sol_volumen + area * altura + "\n");
-
+                    System.out.println(SOL_AREA+""+Math.round(area));
                     break;
 
                 default:
@@ -151,12 +101,6 @@ public class Poligonos_regulares {
                         System.out.println(ADIOS);
                     }
             }
-        } while (poligono != 0);
+        } while (poligono < 0);
     }
 }
-
-
-    
-    
-    
-
