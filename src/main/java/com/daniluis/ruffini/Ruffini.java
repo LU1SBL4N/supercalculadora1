@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.daniluis.ruffini;
-
-import java.util.Scanner;
 
 /**
  *
@@ -13,9 +6,10 @@ import java.util.Scanner;
  */
 public class Ruffini {
 
+    private int xCuadrado;
     private int x;
     private int n;
-    private int xCuadrado;
+    
 
     public Ruffini( int xCuadrado, int x, int n) {
         
@@ -34,7 +28,7 @@ public class Ruffini {
 
     public String ecuacion() {
 
-        String resultado = " ";
+        String resultado = "La solución es: ";
 
         if (xCuadrado > 0) {
 
@@ -50,32 +44,32 @@ public class Ruffini {
         return resultado;
 
     }
-
-    public static void menu() {
-
-        Scanner teclado = new Scanner(System.in);
-
-        int valorUno = 0;
-        int valorDos = 0;
-        int valorTres = 0;
-
-        System.out.println("Introduce el valor xCuadrado");
-        valorUno = teclado.nextInt();
-
-        System.out.println("Introduce el valor X");
-        valorDos = teclado.nextInt();
-
-        System.out.println("Introduce el valor N");
-
-        valorTres = teclado.nextInt();
-
-        Ruffini Ruffi = new Ruffini(valorUno, valorDos, valorTres); // si da no a NaN el valor no es retornable
-
-       
-        
-        System.out.println("La solución es :"   + Ruffi.ecuacion());
-        
-        
-    }
+/*menu antiguo*/
+//    public static void menu() {
+//
+//        Scanner teclado = new Scanner(System.in);
+//
+//        int valorUno = 0;
+//        int valorDos = 0;
+//        int valorTres = 0;
+//
+//        System.out.println("Introduce el valor xCuadrado");
+//        valorUno = teclado.nextInt();
+//
+//        System.out.println("Introduce el valor X");
+//        valorDos = teclado.nextInt();
+//
+//        System.out.println("Introduce el valor N");
+//
+//        valorTres = teclado.nextInt();
+//
+//        Ruffini Ruffi = new Ruffini(valorUno, valorDos, valorTres); // si da no a NaN el valor no es retornable
+//
+//       
+//        
+//        System.out.println("La solución es :"   + Ruffi.ecuacion());
+//        
+//        
+//    }
 
 }

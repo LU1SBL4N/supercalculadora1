@@ -44,7 +44,7 @@ public class RuffiniTest {
         provideInput("3\n1\n3\n2\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La solución es : -1.0 y -2.0"));
+        assertThat(getOutput(), containsString("La solución es: -1.0 y -2.0"));
         
     }  
 
@@ -56,7 +56,7 @@ public class RuffiniTest {
         provideInput("3\n0\n2\n4\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La solución es : -2"));
+        assertThat(getOutput(), containsString("La solución es: -2"));
         
     }  
 
