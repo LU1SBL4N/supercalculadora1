@@ -43,7 +43,7 @@ public class AritmeticaTest {
         provideInput("1\n1\n6\n2\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La suma es :8.0"));
+        assertThat(getOutput(), containsString("8.0"));
         
     }
 
@@ -53,7 +53,7 @@ public class AritmeticaTest {
         provideInput("1\n2\n6\n2\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La resta es :4.0"));
+        assertThat(getOutput(), containsString("4.0"));
         
     }
 
@@ -63,7 +63,7 @@ public class AritmeticaTest {
         provideInput("1\n3\n6\n2\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La multiplicación es :12.0"));
+        assertThat(getOutput(), containsString("12.0"));
         
     }
     @DisplayName("Test entrada a Menú de Aritmética, opción división")
@@ -72,7 +72,7 @@ public class AritmeticaTest {
         provideInput("1\n4\n6\n2\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La división es :3.0"));
+        assertThat(getOutput(), containsString("3.0"));
         
     }
 

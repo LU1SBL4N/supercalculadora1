@@ -1,7 +1,5 @@
 package com.daniluis;
 
-
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -41,13 +39,46 @@ public class Poligonos_regularesTest {
     }
 
     @Test
-    @DisplayName("Test entrada a Menú de Aritmética, opción suma")
-    public void testCasoMenuAritmetica() {
+    @DisplayName("Test entrada a Menú de poligonos, opción circulo")
+    public void testCirculo() {
        
-        provideInput("2\n1\n3\n2\n"); // Ruta del main hacia el metodo
+        provideInput("2\n1\n9\n"); // Ruta del main hacia el metodo
         
         SuperCalculadora.main(new String[0]);
-        assertThat(getOutput(), containsString("La solución es : -1.0 y -2.0"));
+        assertThat(getOutput(), containsString("El area es 254"));
+        
+    }
+    
+    @Test
+    @DisplayName("Test entrada a Menú de poligonos, opción rectangulo")
+    public void testRectangulo() {
+       
+        provideInput("2\n2\n2\n4\n"); // Ruta del main hacia el metodo
+        
+        SuperCalculadora.main(new String[0]);
+        assertThat(getOutput(), containsString("El area es 8.0"));
+        
+    }
+    
+    @Test
+    @DisplayName("Test entrada a Menú de poligonos, opción triangulo")
+    public void testTriangulo() {
+       
+        provideInput("2\n3\n5\n"); // Ruta del main hacia el metodo
+        
+        SuperCalculadora.main(new String[0]);
+        assertThat(getOutput(), containsString("El area es 11"));
+        
+    }
+    
+    @Test
+    @DisplayName("Test entrada a Menú de poligonos, opción pentagono")
+    public void testPentagono() {
+       
+        provideInput("2\n5\n5\n"); // Ruta del main hacia el metodo
+        
+        SuperCalculadora.main(new String[0]);
+        assertThat(getOutput(), containsString("El area es 43"));
         
     }
 
@@ -57,5 +88,5 @@ public class Poligonos_regularesTest {
         System.setOut(systemOut);
     }
 
-
 }
+
